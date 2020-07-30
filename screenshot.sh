@@ -1,7 +1,7 @@
 #Define Variable for input
 URL=$1
 SSNAME=`echo $URL | cut -d / -f3`
-S3BUCKET=lambdatestkishor
+S3BUCKET=$2
 
 #Take screenshot with Google chrome
 docker run  -v /tmp:/tmp --privileged --rm  -it tekfik/chrome /bin/google-chrome-stable --disable-gpu  --headless --no-sandbox --screenshot=/tmp/chrome_"$SSNAME".png $URL
